@@ -3,7 +3,7 @@ Contributors: coffee2code
 Donate link: http://coffee2code.com/donate
 Tags: comment, moderation, subscribers, spam, registered, users, coffee2code
 Requires at least: 2.8
-Tested up to: 3.2
+Tested up to: 3.2.1
 Stable tag: 2.0.2
 Version: 2.0.2
 
