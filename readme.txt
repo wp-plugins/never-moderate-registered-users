@@ -1,28 +1,29 @@
 === Never Moderate Registered Users ===
 Contributors: coffee2code
-Donate link: http://coffee2code.com/donate
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6ARCFJ9TX3522
 Tags: comment, moderation, subscribers, spam, registered, users, coffee2code
-Requires at least: 2.8
-Tested up to: 3.1
-Stable tag: 2.0.1
-Version: 2.0.1
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Requires at least: 3.1
+Tested up to: 3.8
+Stable tag: 2.1
 
 Never moderate or mark as spam comments made by registered users, regardless of the apparent spamminess of the comment.
 
 
 == Description ==
 
-Never moderate or mark as spam comments made by registered users, regardless of the apparent spamminess of the comment.
+This plugin prevents comments from registered users from ever going into the moderation queue or getting automatically marked as spam, regardless of the apparent spamminess of the comment.
 
-To be recognized as a registered user, the user must be logged into your blog at the time they post their comment.
+To be recognized as a registered user, the user must be logged into your site at the time they post their comment.
 
 This plugin assumes that you trust your registered users.  It will automatically approve any comment made by registered users, even if the comment stinks of spam.  Therefore, it is recommended that you do not allow users to register themselves (uncheck the setting "Anyone can register" in the WordPress admin under Settings -> General).
 
-For those wanting to allow people to register themselves, and still have those people (called "subscribers" by WordPress) to be moderated as necessary, but allow for users with other roles or capabilities from being moderated, you can still do so.  The plugin provides a filter, 'c2c_never_moderate_registered_users_caps', which allows you to specify the roles and capabilities that can bypass moderation.  See the FAQ for an example.
+You can still allow open registration, whereby these "subscribers" as moderated as usual, while other more privileged users do not get moderated. The plugin provides a filter, 'c2c_never_moderate_registered_users_caps', which allows you to specify the roles and capabilities that can bypass moderation.  See the FAQ for an example.
 
 This plugin is a partial successor to my now-defunct Never Moderate Admins or Post Author plugin.  In addition to preventing admins and the post's author from being moderated, that plugin also allowed you to prevent registered users from being moderated.  WordPress has long since integrated that functionality, so the main thrust of that plugin became moot.  However, the ability to never moderate registered users is still a valid need that requires this plugin.
 
-Links: [Plugin Homepage]:(http://coffee2code.com/wp-plugins/never-moderate-registered-users/) | [Author Homepage]:(http://coffee2code.com)
+Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/never-moderate-registered-users/) | [Plugin Directory Page](http://wordpress.org/plugins/never-moderate-registered-users/) | [Author Homepage](http://coffee2code.com)
 
 
 == Installation ==
@@ -71,6 +72,40 @@ function dont_moderate_contributors( $caps ) {
 
 == Changelog ==
 
+= 2.1 (2013-01-05) =
+* Fix so spam comments from registered users get approved
+* Accept $commentdata arg from 'pre_comment_approved' filter instead of using global
+* Check for use of both user_ID or user_id in commentdata array
+* Add unit tests
+* Note compatibility through WP 3.8+
+* Drop compatibility with versions of WP older than 3.1
+* Update copyright date (2014)
+* Minor code and documentation reformatting (spacing, bracing)
+* Change donate link
+* Add banner image
+
+= 2.0.5 =
+* Add check to prevent execution of code if file is directly accessed
+* Note compatibility through WP 3.5+
+* Update copyright date (2013)
+
+= 2.0.4 =
+* Re-license as GPLv2 or later (from X11)
+* Add 'License' and 'License URI' header tags to readme.txt and plugin file
+* Remove ending PHP close tag
+* Note compatibility through WP 3.4+
+
+= 2.0.3 =
+* Note compatibility through WP 3.3+
+* Tweak extended description
+* Add link to plugin directory page to readme.txt
+* Update copyright date (2012)
+
+= 2.0.2 =
+* Note compatibility through WP 3.2+
+* Minor code formatting changes (spacing)
+* Fix plugin homepage and author links in description in readme.txt
+
 = 2.0.1 =
 * Note compatibility with WP 3.1+
 * Update copyright date (2011)
@@ -95,6 +130,21 @@ function dont_moderate_contributors( $caps ) {
 
 
 == Upgrade Notice ==
+
+= 2.1 =
+Recommended update: bug fixes; minor code tweaks; added unit tests; noted compatibility through WP 3.8+; dropped compatibility with versions of WP older than 3.1
+
+= 2.0.5 =
+Trivial update: noted compatibility through WP 3.5+
+
+= 2.0.4 =
+Trivial update: noted compatibility through WP 3.4+; explicitly stated license
+
+= 2.0.3 =
+Trivial update: noted compatibility through WP 3.3+
+
+= 2.0.2 =
+Trivial update: noted compatibility through WP 3.2+ and minor code formatting changes (spacing)
 
 = 2.0.1 =
 Trivial update: noted compatibility with WP 3.1+ and updated copyright date.
